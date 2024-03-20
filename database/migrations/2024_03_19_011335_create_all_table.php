@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('description');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->json('ingredient')->nullable();
             $table->json('instruction')->nullable();
             $table->string('image')->nullable();

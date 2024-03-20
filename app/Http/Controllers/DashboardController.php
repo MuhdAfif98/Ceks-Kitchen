@@ -9,9 +9,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::all();
-        return view('dashboard.index.index', [
-            'recipes' => $recipes
-        ]);
+        return view('dashboard.index.index');
     }
 }
