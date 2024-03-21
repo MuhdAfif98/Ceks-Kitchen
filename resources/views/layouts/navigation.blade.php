@@ -12,15 +12,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="dashboard" :active="request()->routeIs('dashboard')">
                         {{ __('Captain\'s Quarters') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('my-recipe')" :active="request()->routeIs('my-recipe')">
+                    <x-nav-link href="my-recipe" :active="request()->is('my-recipe', 'new-recipe')">
                         {{ __('Ship\'s Galley') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('forum')" :active="request()->routeIs('forum')">
+                    <x-nav-link href="forum" :active="request()->routeIs('forum')">
                         {{ __('Tavern\'s Talk') }}
                     </x-nav-link>
                 </div>

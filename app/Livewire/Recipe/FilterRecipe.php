@@ -12,7 +12,7 @@ class FilterRecipe extends Component
 
     use WithPagination;
 
-    public string $searchRecipe = "";
+    public $searchRecipe = "";
 
     public function render()
     {

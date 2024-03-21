@@ -2,22 +2,26 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/my-recipe', function () {
-    return view('recipe.index.index');
-})->middleware(['auth', 'verified'])->name('my-recipe');;
+// Dashbpard Controller
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
+// Recipe Controller
+Route::get('/my-recipe', [RecipeController::class, 'index']);
+Route::get('/new-recipe', [RecipeController::class, 'newRecipe']);
+Route::post('/create-recipe', [RecipeController::class, 'createRecipe']);
+Route::get('/recipe-details/{id}', [RecipeController::class, 'getSingleRecipe']);
+
+// Forum Controller
 Route::get('/forum', function () {
     return view('forum.index.index');
 })->middleware(['auth', 'verified'])->name('forum');
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

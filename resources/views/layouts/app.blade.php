@@ -34,5 +34,6 @@
             </main>
             @livewireScripts
         </div>
+        <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"></script>
     </body>
 </html>
