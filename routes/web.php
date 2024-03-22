@@ -13,8 +13,8 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 // Recipe Controller
-Route::get('/my-recipe', [RecipeController::class, 'index']);
-Route::get('/new-recipe', [RecipeController::class, 'newRecipe']);
+Route::get('/my-recipe', [RecipeController::class, 'index'])->name('my-recipe');
+Route::get('/new-recipe', [RecipeController::class, 'newRecipe'])->name('new-recipe');
 Route::post('/create-recipe', [RecipeController::class, 'createRecipe']);
 Route::get('/recipe-details/{id}', [RecipeController::class, 'getSingleRecipe']);
 

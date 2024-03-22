@@ -66,9 +66,6 @@
             </div>
         </div>
     </div>
-
-    @livewire('Recipe.recipe-list')
-
     <x-ceks.footer />
 
 </x-app-layout>
